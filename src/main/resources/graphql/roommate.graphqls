@@ -1,0 +1,19 @@
+type Roommate {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    course: String!
+    level: Int!
+}
+
+type Query {
+    findAllRoommates: [Roommate]!
+    findRoommateByLevel(level: Int!): [Roommate]
+    findRoommateById(id: ID!): Roommate
+}
+
+type Mutation {
+    newRoommate(firstName: String! lastName: String! course: String! level: Int): Roommate!
+    updateRoommateLevel(level: Int! id: ID!): Roommate
+    deleteRoommateById(id: ID!): String
+}
